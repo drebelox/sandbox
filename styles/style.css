@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
-
 *,
 *:before,
 *:after {
@@ -14,11 +12,37 @@
   cursor: default;
 }
 
+.level-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.level-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.level-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.level-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.level-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
 .SAMPLE_ICON{
   background-image: url(../images/avatar.jpeg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ALL_MAIL_ICON{
+  background-image: url(../images/allmail.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 html,
@@ -28,7 +52,6 @@ body {
   overflow: hidden;
   margin: 0;
   font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
@@ -63,7 +86,9 @@ main {
 }
 
 nav {
-  flex: 0 0 200px;
+  flex: 0 0 150px;
+  margin: 0;
+  padding: 0;
   display: flex;
   background-color: #26252A;
   flex-direction: column;
@@ -152,67 +177,36 @@ footer {
   -webkit-overflow-scrolling: touch;
 }
 
-.account {
-  flex: 0 0 75px;
-  display: flex;
-  overflow: hidden;
-  line-height: 75px;
-  background: #26252A;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.account .icon {
-  flex: 0 0 45px;
-  margin: 15px 10px 15px 10px;
-  border-radius: 50%;
-  background-color: #e9e9e9;
-}
-
-.account .name {
-  flex: 0 0 95;
-  color: #9D9BA2;
-  height: 75px;
-  font-size: 100%;
-  text-align: center;
-  overflow: hide;
-  display: inline-block;
-  float: left;
-}
-
-.account .dd-trigger {
-  color: #9D9BA2;
-  flex: 0 0 0 40px;
-  line-height: 85px;
-  margin-left: 10px;
-}
-
 .filters h2 {
   margin: 0;
   padding-left: 10px;
-  line-height: 40px;
-  font-size: 18px;
-  color: #9D9BA2;
-  height: 40px;
+  line-height: 25px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  height: 25px;
   background-color: #1D1D20;
   font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 .filters ul {
   height: auto;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 10px 0;
   text-align: left;
 }
 
 .filters ul li {
-  height: 40px;
-  line-height: 40px;
-  padding-left: 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 5px 0 5px 15px;
+}
+
+.filters ul li i {
+  opacity: 0.5;
 }
 
 .filters li:hover {
@@ -220,7 +214,7 @@ footer {
 }
 
 .filters .sep {
-  margin: 0 25px 0 15px;
+  margin: 0 0px 0 15px;
   border-bottom: solid 1px rgba(255,255,255, 0.2);
 }
 
@@ -232,8 +226,62 @@ footer {
   flex: 4;
 }
 
-.filters .account {
-  flex: 0 0 100px;
+nav .accounts {
+  flex: 0 0 40px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: #9D9BA2;
+  overflow: hidden;
+  flex-direction: column;
+  background: #1D1D20;
+  transition: 1s all;
+  border-top: solid 1px rgba(0,0,0, 0.2);
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav .accounts:hover {
+  flex: 0 0 auto;
+  flex-direction: column-reverse;
+}
+
+nav .account {
+  flex: 0 0 40px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+}
+
+nav .account:hover {
+  background-color: #3698DE;
+  color: #ececec;
+}
+
+nav .account .icon {
+  flex: 0 0 30px;
+  height: 30px;
+  margin: 5px 10px 5px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #e9e9e9;
+}
+
+nav .account .name {
+  flex: 1;
+  line-height: 40px;
+  font-size: 100%;
+  text-align: left;
+  overflow: hide;
+  display: inline-block;
+  float: left;
+}
+
+nav .account .dd-trigger {
+  color: #9D9BA2;
+  flex: 0 0 0 25px;
+  line-height: 40px;
+  margin-left: 0px;
 }
 
 .messages {
@@ -250,9 +298,8 @@ footer {
   line-height: 30px;
   color: #e2e2e2;
   display: flex;
-  background-color: #26252A;
-  z-index: 9999;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  background-color: #4A4852;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .message-menu > i {
@@ -264,11 +311,9 @@ footer {
 .message-menu > i:hover {
   color: #3698DE;
   background-color: #2C3E49;
-  border-radius: 6px;
 }
 
 .message-menu .sep {
-  margin: 6px 0 6px 0;
   border-right: solid 1px rgba(255,255,255, 0.1);
 }
 
@@ -349,31 +394,46 @@ footer {
   display: flex;
   overflow: auto;
   flex-direction: column;
+  background-color: rgba(200, 200, 200, 0.6);
 }
 
 .viewer article {
   flex: 1;
   display: flex;
+  border-radius: 2px;
+  margin: 20px;
+  max-height: 300px;
+  min-height: 300px;
   flex-direction: column;
+  overflow: hidden;
 }
 
-.viewer .header {
+.viewer article:first-of-type {
+  flex: 0 0 auto;
+  max-height: none;
+}
+
+.viewer article .message-header {
   flex: 0 0 80px;
-  background-color: #e0e0e0;
+  padding: 10px;
+  background-color: #ffffff;
 }
 
-.viewer .message-menu {
+.viewer article .message-menu {
   flex: 0 0 30px;
-  background-color: #E7ECEF;
-  color: #555555;
+  background-color: #6A6874;
+  color: #e3e3e3;
+  z-index: 999999;
 }
 
-.viewer .message-menu > i:hover {
-  background-color: #E1E1E1;
+.viewer article .message-menu > i:hover {
+  background-color: #4A4852;
 }
 
-.viewer .message {
+.viewer article .message-body {
   flex:1;
-  height: 300px;
+  padding: 10px;
+  min-height: 300px
+  overflow: hidden;
   background-color: #ffffff;
 }

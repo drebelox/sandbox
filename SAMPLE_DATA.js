@@ -5,6 +5,7 @@ var SAMPLE_DATA = {
     {title: 'IN PROGRESS',      id: 'in-progress'},
     {title: 'READY FOR REVIEW', id: 'ready-for-review'},
     {title: 'IN REVIEW',        id: 'in-review'},
+    {title: 'RESOLVED',         id: 'resolved'},
     {title: 'DONE',             id: 'done'}
   ],
   tickets: [

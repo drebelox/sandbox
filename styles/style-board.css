@@ -176,6 +176,10 @@ footer {
   flex: 1;
   flex-direction: column;
   overflow: auto;
+  padding: 5px;
+  margin: 10px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 5px;
 }
 
 .swimlane > .title {
@@ -192,10 +196,10 @@ footer {
 .swimlane > .cards {
   display: flex;
   flex: 1;
-  padding: 15px;
+  padding: 5px;
   flex-direction: column;
   overflow: auto;
-  border: 1px dotted rgba(0, 0, 0, 0.0);
+  border: 2px dashed rgba(0,0,0,0.0);
 }
 
 .card {
@@ -203,6 +207,7 @@ footer {
   max-height: 200px;
   padding: 10px;
   margin-bottom: 20px;
+  overflow: hidden;
   background: #FDFDFF;
 }
 

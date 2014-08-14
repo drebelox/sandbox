@@ -27,13 +27,13 @@ var Card = React.createClass({
   },
   onDragOver: function (e) {
     e.preventDefault();
-    e.key = this.props.key;
-    if (this.state.dragging) return;
-    var shift = (((e.nativeEvent.target.clientHeight/2) / e.nativeEvent.offsetY) >> 0)
-      ? {borderTop: 'solid 1px rgba(0,0,0, 0.3)'}
-      : {borderBottom: 'solid 1px rgba(0,0,0, 0.3)'};
+    // e.key = this.props.key;
+    // if (this.state.dragging) return;
+    // var shift = (((e.nativeEvent.target.clientHeight/2) / e.nativeEvent.offsetY) >> 0)
+    //   ? {borderTop: 'solid 1px rgba(0,0,0, 0.3)'}
+    //   : {borderBottom: 'solid 1px rgba(0,0,0, 0.3)'};
 
-    this.setState({style: {border: 'dashed 3px rgba(0,0,0, 0.3)'}});
+    // this.setState({style: {border: 'dashed 3px rgba(0,0,0, 0.3)'}});
   },
   noBubble: function (e) {
     e.preventDefault();
@@ -48,9 +48,19 @@ var Card = React.createClass({
   },
   render: function() {
     return (
-      <li className='card level-2' draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDragOver={this.onDragOver} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.onDragLeave}>
+      <li className={'card level-2 ' + (this.props.data.priority || '')} draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDragOver={this.onDragOver} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.onDragLeave}>
         <div className='title' onDragLeave={this.noBubble}>
-          {this.props.data.title}
+          [TYPE] {this.props.data.title}
+        </div>
+        <div className='description' onDragLeave={this.noBubble}>
+          {this.props.data.description}
+        </div>
+        <div className='meta'>
+          <div className='id'>[BH5-123]</div>
+          <div className='metric'>C <div className='circle'>34</div></div>
+          <div className='metric'>E <div className='circle'>5</div></div>
+          <div className='metric'>P <div className='circle'>8</div></div>
+          <div className='icons'><img className='icon' src="../images/avatar.jpg"/><img className='icon' src="../images/bodhi5.png"/></div>
         </div>
       </li>
     );

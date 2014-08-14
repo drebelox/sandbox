@@ -12,38 +12,50 @@ var SAMPLE_DATA = {
     {
       title: 'Some TODO1',
       status: 'todo',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details',
+      priority: 'major'
     },
     {
       title: 'Some Done',
       status: 'done',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details',
+      priority: 'minor'
     },
     {
       title: 'Some IP-1',
       status: 'in-progress',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details',
+      priority: 'critical'
     },
     {
       title: 'Some TOOD-2',
       status: 'todo',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     },
     {
       title: 'Some IR-1',
       status: 'in-review',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     },
     {
       title: 'Some RR-1',
       status: 'ready-for-review',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     },
     {
       title: 'Some TODO-3',
       status: 'todo',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     },
     {
       title: 'Some TODOD-4',
       status: 'todo',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     },
     {
       title: 'Some TODO-5',
       status: 'todo',
+      description: 'Example Ticket Body Content Describing Issue and Resolution Details'
     }
   ]
 }

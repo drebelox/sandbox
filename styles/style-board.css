@@ -1,6 +1,9 @@
+@import url('reset.css');
+@import url('window.css');
 
 main,
 .main-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

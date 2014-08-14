@@ -35,9 +35,8 @@ var Card = React.createClass({
 
     // this.setState({style: {border: 'dashed 3px rgba(0,0,0, 0.3)'}});
   },
-  noBubble: function (e) {
+  preventDefault: function (e) {
     e.preventDefault();
-    e.stopPropagation();
   },
   checkBounds: function (e) {
     // check bounds to avoid false leave events cause by child elements
@@ -48,11 +47,11 @@ var Card = React.createClass({
   },
   render: function() {
     return (
-      <li className={'card level-2 ' + (this.props.data.priority || '')} draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDragOver={this.onDragOver} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.onDragLeave}>
-        <div className='title' onDragLeave={this.noBubble}>
+      <li className={'card level-2 ' + (this.props.data.priority || '')} draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.preventDefault}>
+        <div className='title' onDragLeave={this.preventDefault}>
           [TYPE] {this.props.data.title}
         </div>
-        <div className='description' onDragLeave={this.noBubble}>
+        <div className='description' onDragLeave={this.preventDefault}>
           {this.props.data.description}
         </div>
         <div className='meta'>
@@ -82,6 +81,7 @@ var SwimLane = React.createClass({
     this.props.onDragOver && this.props.onDragOver(e, this.props.data.id);
   },
   onDragLeave: function (e) {
+    e.preventDefault();
     if (this.checkBounds(e)) return;
     this.setState({hover: false});
   },
@@ -135,17 +135,12 @@ var Board = React.createClass({
       return lanes;
     }, lanes);
   },
-  onDragOver: function (e, lane) {
-    console.log(e.key, lane);
-  },
   onDrop: function (e,ee) {
-    console.log(ee)
     var state = this.state;
     state[e.data.status].tickets.splice(e.key,1);
     e.data.status = ee;
     state[ee].tickets.push(e.data);
     this.setState(state);
-    console.log(e);
   },
   render: function() {
     var self = this;
@@ -153,7 +148,7 @@ var Board = React.createClass({
       <div className='board'>
         {this.props.data.swimlanes.map(function(lane, index){
           return (
-            <SwimLane key={'lane-' + index} data={lane} onDrop={self.onDrop} onDragOver={self.onDragOver}>
+            <SwimLane key={'lane-' + index} data={lane} onDrop={self.onDrop}>
               {self.state[lane.id].tickets.map(function (ticket, index){
                 return <Card key={index} data={ticket}/>
               })}

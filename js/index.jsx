@@ -60,7 +60,7 @@ var Card = React.createClass({
           <div className='metric'>C <div className='circle'>34</div></div>
           <div className='metric'>E <div className='circle'>5</div></div>
           <div className='metric'>P <div className='circle'>8</div></div>
-          <div className='icons'><img className='icon' src="../images/avatar.jpg"/><img className='icon' src="../images/bodhi5.png"/></div>
+          <div className='icons'><img className='icon' src="./images/avatar.jpg"/><img className='icon' src="./images/bodhi5.png"/></div>
         </div>
       </li>
     );

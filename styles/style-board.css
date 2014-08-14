@@ -185,10 +185,11 @@ footer {
 .swimlane {
   display: flex;
   flex: 1;
+  min-width: 200px;
   flex-direction: column;
   overflow: auto;
-  padding: 5px;
-  margin: 10px;
+  padding: 5px 2px 5px 2px;
+  margin: 10px 5px 10px 5px;
   background-color: rgba(0,0,0,0.1);
   border-radius: 5px;
 }
@@ -215,7 +216,7 @@ footer {
 
 .card {
   min-height: 120px;
-  max-height: 200px;
+  max-height: 250px;
   padding: 10px 10px 8px 10px;
   display: flex;
   flex-direction: column;
@@ -227,6 +228,7 @@ footer {
 .card .title {
   flex: 1;
   line-height: 20px;
+  font-size: 14px;
   min-height: 20px;
   max-height: 20px;
 }
@@ -243,7 +245,6 @@ footer {
 
 .card .meta {
   flex: 1;
-  max-height: 25px;
   min-height: 25px;
   font-size: 10px;
   font-weight: 200;
@@ -257,16 +258,20 @@ footer {
   flex: 1;
   width: 100%;
   line-height: 15px;
-  font-size: 12px;
+  font-size: 10px;
+}
+
+.card .meta .id {
+  color: rgba(100, 100, 255, 0.8);
+  min-width: 45px;
+  white-space: nowrap;
+  border-right: 1px solid rgba(0,0,0, 0.2);
 }
 
 .card .meta .metric {
   display: flex;
-  max-width: 40px;
-}
-
-.card .meta .id {
-  color: rgba(0, 0, 255, 0.5);
+  max-width: 35px;
+  margin-left: 5px;
 }
 
 .card .meta .circle {
@@ -280,14 +285,52 @@ footer {
   margin-left: 3px;
   background-color: rgba(0,0,0, 0.08);
   color: #000000;
+  margin-right:3px;
 }
 
 .card .meta .icons {
   text-align: right;
-  max-width: 60px;
+  min-width: 50px;
+  border-left: 1px solid rgba(0,0,0, 0.2);
 }
 
 .card .meta .icon {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left: 2px;
+  margin-bottom: -8px;
+  border: 1px solid rgba(0,0,0, 0.2);
+}
+
+
+@media (max-width: 1280px) {
+  .card .meta > * {
+    flex: 1;
+    width: 100%;
+    line-height: 15px;
+    font-size: 9px;
+  }
+
+  .card .meta .icons {
+    min-width: 25px;
+  }
+
+  .card .meta .icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  .card .meta .icon + .icon {
+    margin-left: -20px;
+  }
+
+  .card .meta .icons:hover .icon + .icon {
+    display: none;
+  }
+}
+
+.icon .reviewer {
   border-radius: 50%;
   height: 25px;
   width: 25px;

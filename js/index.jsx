@@ -55,7 +55,7 @@ var Card = React.createClass({
           {this.props.data.description}
         </div>
         <div className='meta'>
-          <div className='id'>[BH5-123]</div>
+          <div className='id'>BH5-123</div>
           <div className='metric'>C <div className='circle'>34</div></div>
           <div className='metric'>E <div className='circle'>5</div></div>
           <div className='metric'>P <div className='circle'>8</div></div>

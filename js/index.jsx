@@ -55,8 +55,12 @@ var Card = React.createClass({
           {this.props.data.description}
         </div>
         <div className='meta'>
-          <div className='type'>BH5-123</div>
-          <div className='metric'><i className='fa fa-comment-o'> 34</i> <i className='fa fa-clock-o'> 34</i> <i className='fa fa-truck'> 34</i> </div>
+          <div className='id'>BH5-123</div>
+          <div className='metric'>
+            <i className='fa fa-comment-o'> 34</i>
+            <i className='fa fa-clock-o'> 34</i>
+            <i className='fa fa-truck'> 34</i>
+          </div>
           <div className='icons'><img className='icon' src="./images/avatar.jpg"/><img className='icon' src="./images/bodhi5.png"/></div>
         </div>
       </li>

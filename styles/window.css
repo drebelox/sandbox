@@ -1,0 +1,133 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  background: #EEEEEE;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 0 0 25px;
+  display: flex;
+  background-color: #26252A;
+  padding-left: 10px;
+  z-index: 999;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+header.hidden {
+  display: none;
+}
+
+menu {
+  flex: 1;
+  display: flex;
+  padding: 0;
+  align-content: flex-start;
+  margin: 0;
+}
+
+footer {
+  display: none;
+  flex: 0 0 20px;
+  background-color: #F6F6F6;
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+
+.win-title {
+  height: 50px;
+  padding: 10px;
+  min-height: 50px;
+  background-color: #4285f4;
+  color: #ffffff;
+  line-height: 30px;
+}
+.win-controls {
+  flex: 0 0 60px;
+  line-height: 25px
+}
+
+.win-controls a {
+  display: inline-block;
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  line-height: 0px;
+  font-size: 0px;
+  color: #333333;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+  position: relative;
+}
+
+.win-controls:hover > a {
+  line-height: 11px;
+  font-size: 14px;
+}
+
+.win-controls a.close {
+  background: #F0524A;
+}
+
+.win-controls a.min {
+  background: #EBC044;
+}
+
+.win-controls a.max {
+  background: #96CF72;
+}
+
+.main-menu.hide {
+  margin-top: -25px;
+}
+
+.main-menu .brand {
+  flex: 0 0 50px;
+  text-align: left;
+  margin: 0 20px 0 20px;
+  line-height: 23px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #9D9BA2;
+}
+
+.main-menu > a {
+  text-decoration: none;
+  flex: 0 0 auto;
+  text-align: left;
+  padding: 0 10px 0 10px;
+  line-height: 25px;
+  font-size: 12px;
+  color:#ffffff;
+}
+
+.main-menu > a:hover {
+  background-color: #3698DE;
+}

@@ -61,6 +61,11 @@ main,
   font-size: 24px;
 }
 
+.filters {
+  display: none;
+  flex: 0 0 50px;
+}
+
 .board {
   display: flex;
   flex: 1;

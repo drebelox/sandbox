@@ -144,6 +144,9 @@ var Board = React.createClass({
     state[ee].tickets.push(e.data);
     this.setState(state);
   },
+  toggleFilterView: function () {
+    this.setState({filtering: !this.state.filtering});
+  },
   render: function() {
     var self = this;
     return (
@@ -151,8 +154,9 @@ var Board = React.createClass({
       <div className="app-bar">
         <button id="menuToggle" className="app-bar-button menu-toggle menu-is-closed"><i className="fa fa-bars"></i></button>
         <h1 id="appHeadline" className="app-headline">Bodhi5 - Sprint 1</h1>
-        <button id="sortToggle" className="app-bar-button sort-toggle"><i className="fa fa-search"></i></button>
+        <button id="sortToggle" className="app-bar-button sort-toggle" onClick={this.toggleFilterView}><i className="fa fa-search"></i></button>
       </div>
+      <div className="filters" style={{display: (this.state.filtering ? 'flex' : 'none')}}></div>
       <div className='board'>
         {this.props.data.swimlanes.map(function(lane, index){
           return (

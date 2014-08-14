@@ -47,18 +47,16 @@ var Card = React.createClass({
   },
   render: function() {
     return (
-      <li className={'card level-2 ' + (this.props.data.priority || '')} draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.preventDefault}>
+      <li className={'card ' + (this.props.data.priority || '')} draggable="true" style={this.state.style} onDragStart={this.onDragStart} onDrop={this.onDrop} onDragEnd={this.onDragEnd} onDragLeave={this.preventDefault}>
         <div className='title' onDragLeave={this.preventDefault}>
-          [TYPE] {this.props.data.title}
+          <i className='fa fa-lightbulb-o'> {this.props.data.title}</i>
         </div>
         <div className='description' onDragLeave={this.preventDefault}>
           {this.props.data.description}
         </div>
         <div className='meta'>
-          <div className='id'>BH5-123</div>
-          <div className='metric'>C <div className='circle'>34</div></div>
-          <div className='metric'>E <div className='circle'>5</div></div>
-          <div className='metric'>P <div className='circle'>8</div></div>
+          <div className='type'>BH5-123</div>
+          <div className='metric'><i className='fa fa-comment-o'> 34</i> <i className='fa fa-clock-o'> 34</i> <i className='fa fa-truck'> 34</i> </div>
           <div className='icons'><img className='icon' src="./images/avatar.jpg"/><img className='icon' src="./images/bodhi5.png"/></div>
         </div>
       </li>
@@ -82,7 +80,7 @@ var SwimLane = React.createClass({
   },
   onDragLeave: function (e) {
     e.preventDefault();
-    if (this.checkBounds(e)) return;
+    if (this.checkBounds(e) || (e.target.title !== 'cards')) return;
     this.setState({hover: false});
   },
   onDrop: function (e) {
@@ -99,13 +97,13 @@ var SwimLane = React.createClass({
     return boundsX && boundsY;
   },
   render: function() {
-    var style = (this.state.hover) ? {border: '2px dashed #777777'} : {};
+    var style = (this.state.hover) ?  'hover' : '';
     return (
       <div className='swimlane'>
         <div className='title'>
           {this.props.data.title}
         </div>
-        <ul className='cards' style={style} onDragOver={this.onDragOver} onDragLeave={this.onDragLeave} onDrop={this.onDrop}>
+        <ul className={'cards ' + style} key='swimlane' title='cards' onDragOver={this.onDragOver} onDragLeave={this.onDragLeave} onDrop={this.onDrop}>
           {this.props.children}
         </ul>
       </div>
@@ -145,6 +143,12 @@ var Board = React.createClass({
   render: function() {
     var self = this;
     return (
+      <div className='main-content'>
+      <div className="app-bar">
+        <button id="menuToggle" className="app-bar-button menu-toggle menu-is-closed"><i className="fa fa-bars"></i></button>
+        <h1 id="appHeadline" className="app-headline">Bodhi5 - Sprint 1</h1>
+        <button id="sortToggle" className="app-bar-button sort-toggle"><i className="fa fa-search"></i></button>
+      </div>
       <div className='board'>
         {this.props.data.swimlanes.map(function(lane, index){
           return (
@@ -155,6 +159,7 @@ var Board = React.createClass({
             </SwimLane>
           );
         })}
+      </div>
       </div>
     );
   }

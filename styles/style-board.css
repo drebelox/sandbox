@@ -11,6 +11,7 @@
   cursor: default;
   padding: 0;
   margin: 0;
+  border: 0;
 }
 
 html,
@@ -19,8 +20,8 @@ body {
   height: 100%;
   overflow: hidden;
   margin: 0;
+  background: #EEEEEE;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
   display: flex;
   flex-direction: column;
 }
@@ -49,10 +50,15 @@ menu {
 }
 
 main,
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .board {
   display: flex;
   flex: 1;
-  background-color: #F0EFEF;
+  overflow: auto;
 }
 
 nav {
@@ -182,6 +188,62 @@ footer {
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
+.app-bar {
+  display: flex;
+  flex:0 0 auto;
+  background-color: #4285F4;
+  box-shadow: 0 2px 2px #c6c6c6;
+  padding: 15px 20px;
+  display: flex;
+  color: #ffffff;
+  z-index: 10;
+  transition: background-color 500ms, box-shadow 500ms;
+}
+
+.app-headline {
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 200;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.app-bar-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  height: 30px;
+  outline: none;
+  padding: 2px 0 3px;
+  text-shadow: 0 0 transparent;
+  transition: color 500ms, text-shadow 500ms;
+  width: 30px;
+}
+
+.app-bar-button:hover {
+  color: #c1c1c1;
+}
+
+.app-bar-button:active {
+  color: #919191;
+}
+
+.menu-toggle {
+  flex: 1;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 24px;
+}
+
+.sort-toggle {
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 24px;
+}
+
 .swimlane {
   display: flex;
   flex: 1;
@@ -189,20 +251,19 @@ footer {
   flex-direction: column;
   overflow: auto;
   padding: 5px 2px 5px 2px;
-  margin: 10px 5px 10px 5px;
-  background-color: rgba(0,0,0,0.1);
-  border-radius: 5px;
+  border-right: 1px solid rgba(200,200,200,0.3);
+  border-left: 1px solid rgba(200,200,200,0.3);
 }
 
 .swimlane > .title {
   flex: 0 0 30px;
-  font-size: 25px;
-  line-height: 30px;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 100;
-  color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  line-height: 12px;
+  margin: 10px 0 0px 0;
+  text-align: left;
+  margin-left: 16px;
+  font-weight: 400;
+  color: #999999;
 }
 
 .swimlane > .cards {
@@ -214,40 +275,56 @@ footer {
   border: 2px dashed rgba(0,0,0,0.0);
 }
 
+.swimlane > .cards.hover {
+  border: 2px dashed #777777;
+  background-color: rgba(0,0,0, 0.05);
+}
+
+.swimlane > .cards.hover > * {
+  display: none;
+}
+
 .card {
   min-height: 120px;
   max-height: 250px;
-  padding: 10px 10px 8px 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   overflow: hidden;
+  border-radius: 4px;
   background: #FDFDFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .card .title {
   flex: 1;
+  margin: 5px;
   line-height: 20px;
   font-size: 14px;
   min-height: 20px;
   max-height: 20px;
+  color: #565656;
 }
 
 .card .description {
   flex: 4;
+  margin: 5px 5px 0 5px;
   min-height: 50px;
   margin-top: 5px;
   font-size: 12px;
   font-weight: 200;
-  color: #777777;
+  color: #8F8F8F;
   border-bottom: 1px solid rgba(200, 200, 200, 0.3);
 }
 
 .card .meta {
   flex: 1;
+  padding: 10px;
   min-height: 25px;
+  line-height: 25px;
   font-size: 10px;
   font-weight: 200;
+  min-width: 100px;
   height: auto;
   color: #999999;
   display: flex;
@@ -257,7 +334,7 @@ footer {
 .card .meta > * {
   flex: 1;
   width: 100%;
-  line-height: 15px;
+  line-height: 10px;
   font-size: 10px;
 }
 
@@ -265,32 +342,27 @@ footer {
   color: rgba(100, 100, 255, 0.8);
   min-width: 45px;
   white-space: nowrap;
-  border-right: 1px solid rgba(0,0,0, 0.2);
 }
 
 .card .meta .metric {
   display: flex;
-  max-width: 35px;
-  margin-left: 5px;
-}
-
-.card .meta .circle {
-  border-radius: 20%;
-  height: 15px;
-  width: 20px;
+  min-width: 90px;
   font-size: 10px;
   line-height: 15px;
   text-align: center;
   font-weight: 400;
   margin-left: 3px;
-  background-color: rgba(0,0,0, 0.08);
-  color: #000000;
   margin-right:3px;
+}
+
+.metric > i {
+  margin-right: 5px;
 }
 
 .card .meta .icons {
   text-align: right;
   min-width: 50px;
+  max-width: 50px
   border-left: 1px solid rgba(0,0,0, 0.2);
 }
 
@@ -304,12 +376,9 @@ footer {
 }
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1000px) {
   .card .meta > * {
     flex: 1;
-    width: 100%;
-    line-height: 15px;
-    font-size: 9px;
   }
 
   .card .meta .icons {

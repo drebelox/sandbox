@@ -61,7 +61,7 @@ var Card = React.createClass({
             <i className='fa fa-clock-o'> 34</i>
             <i className='fa fa-truck'> 34</i>
           </div>
-          <div className='icons'><img className='icon' src="./images/avatar.jpg"/><img className='icon' src="./images/bodhi5.png"/></div>
+          <div className='icons'><img className='icon' src="../images/avatar.jpg"/><img className='icon' src="../images/bodhi5.png"/></div>
         </div>
       </li>
     );

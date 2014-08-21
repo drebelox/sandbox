@@ -34,25 +34,25 @@
 
 
 .BODHI5_ICON{
-  background-image: url(../images/bodhi5.png);
+  background-image: url(../../images/bodhi5.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .ALL_MAIL_ICON{
-  background-image: url(../images/allmail.png);
+  background-image: url(../../images/allmail.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .GMAIL_ICON{
-  background-image: url(../images/gmail.jpg);
+  background-image: url(../../images/gmail.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .EUFORIC_ICON{
-  background-image: url(../images/avatar.jpg);
+  background-image: url(../../images/avatar.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ body {
   height: 100%;
   overflow: hidden;
   margin: 0;
-  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Roboto";
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
@@ -95,16 +95,17 @@ menu {
 main {
   display: flex;
   flex: 1;
+    background-color: rgba(200, 200, 200, 0.6);
 }
 
 nav {
   flex: 0 0 150px;
-  margin: 0;
+  margin: 10px 0 10px 10px;
   padding: 0;
   display: flex;
-  background-color: #26252A;
+  background-color: #ffffff;
   flex-direction: column;
-  color: #e2e2e2;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 footer {
@@ -116,6 +117,15 @@ footer {
   transform: translateZ(0);
 }
 
+
+.win-title {
+  height: 50px;
+  padding: 10px;
+  min-height: 50px;
+  background-color: #4285f4;
+  color: #ffffff;
+  line-height: 30px;
+}
 .win-controls {
   flex: 0 0 60px;
   line-height: 25px
@@ -197,7 +207,7 @@ footer {
   color: rgba(255, 255, 255, 0.5);
   height: 25px;
   background-color: #1D1D20;
-  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Roboto";
   font-weight: 200;
   letter-spacing: 2px;
 }
@@ -297,6 +307,7 @@ nav .account .dd-trigger {
 }
 
 .messages {
+  margin: 10px 0 10px 10px;
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
@@ -413,16 +424,19 @@ nav .account .dd-trigger {
 .viewer {
   flex: 4;
   display: flex;
-  overflow: auto;
   flex-direction: column;
-  background-color: rgba(200, 200, 200, 0.6);
+  backround: #ffffff;
+  margin: 10px 0 10px 10px;
+}
+
+.viewer .current-messages {
+  overflow: auto;
 }
 
 .viewer article {
   flex: 1;
   display: flex;
   border-radius: 2px;
-  margin: 20px;
   max-height: 300px;
   min-height: 300px;
   flex-direction: column;

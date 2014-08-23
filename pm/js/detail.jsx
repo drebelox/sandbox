@@ -49,14 +49,14 @@ var ButtonBar = React.createClass({
       <button id="edit" className="button-bar-button"><i className="font-icon-left fa fa-pencil"></i>Edit</button>
       <button id="comment" className="button-bar-button"><i className="font-icon-left fa fa-comment-o"></i>Comment</button>
       <button id="assign" className="button-bar-button">Assign</button>
-      <button id="more" className="button-bar-button">More<i className="font-icon-right fa fa-angle-down"></i></button>
+      <button id="more" className="button-bar-button">More<i className="font-icon-right fa fa-caret-down"></i></button>
       <button id="closeIssue" className="button-bar-button">Close Issue</button>
       <button id="reopenIssue" className="button-bar-button">Reopen Issue</button>
       <button id="admin" className="button-bar-button">Admin</button>
       </div>
       <div className="right-buttons">
       <button id="share" className="button-bar-button"><i className="font-icon-left fa fa-share"></i>Share</button>
-      <button id="export" className="button-bar-button"><i className="font-icon-left fa fa-download"></i>Export<i className="font-icon-right fa fa-angle-down"></i></button>
+      <button id="export" className="button-bar-button"><i className="font-icon-left fa fa-download"></i>Export<i className="font-icon-right fa fa-caret-down"></i></button>
       </div>
       </div>
     );
@@ -162,6 +162,7 @@ var DetailsBox = React.createClass({
       <div className="collapse-box">
         <div className="collapse-heading">
           <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Details</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
         <div style={{float: "left", width: "50%"}}>
@@ -234,6 +235,7 @@ var DescriptionBox = React.createClass({
       <div className="collapse-box">
         <div className="collapse-heading">
           <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Description</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
           <strong className="name" onClick={this.toggleTextArea} style={{display: (this.state.edit ? "block" : "none")}}>Click to add a Description... </strong>
@@ -263,7 +265,8 @@ var ActivityBox = React.createClass({
     return (
       <div className="collapse-box">
         <div className="collapse-heading">
-          <h3 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Activity</h3>
+          <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Activity</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
         </div>
@@ -314,7 +317,8 @@ var PeopleBox = React.createClass({
     return (
       <div className="collapse-box">
         <div className="collapse-heading">
-          <h3 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>People</h3>
+          <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>People</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
           <div>
@@ -364,7 +368,8 @@ var DatesBox = React.createClass({
     return (
       <div className="collapse-box">
         <div className="collapse-heading">
-          <h3 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Dates</h3>
+          <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Dates</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
           <div>
@@ -403,7 +408,8 @@ var TrackingBox = React.createClass({
     return (
       <div className="collapse-box">
         <div className="collapse-heading">
-          <h3 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Time Tracking</h3>
+          <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Time Tracking</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
           <div>
@@ -457,7 +463,8 @@ var AgileBox = React.createClass({
     return (
       <div className="collapse-box">
         <div className="collapse-heading">
-          <h3 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Agile</h3>
+          <h4 id="collapse-button" onClick={this.toggleContent}><i className={"font-icon-left fa " + (this.state.open ? "fa-angle-down" : "fa-angle-right")}></i>Agile</h4>
+          <div className="separator"></div>
         </div>
         <div className="collapse-content" style={{display: (this.state.open ? "block" : "none")}}>
           <div>

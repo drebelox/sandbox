@@ -147,7 +147,13 @@ p {
 
 #collapse-button {
   margin-left: 10px;
+  width: 200px;
 }
+
+.collapse-heading {
+  width: auto;
+}
+
 
 .comment-box {
   margin: 5px;
@@ -334,4 +340,11 @@ p {
   display: block;
   height: 100%;
   background-color: #7CA8FF;
+}
+
+.separator {
+  margin-left: 5px;
+  height: 1px;
+  width: 60%;
+  background-color: #D6D6D6;
 }
